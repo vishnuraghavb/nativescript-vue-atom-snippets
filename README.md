@@ -1,8 +1,10 @@
 # NativeScript-Vue Snippets for Atom
 
-> Snippets for NativeScript-Vue.
+> Snippets for Telerik's NativeScript with Vue
 
-All UI elements are prefixed with `ns`. Attributes, Events and Dialogs do not have a prefix.
+All snippets are prefixed with `ns`. Attributes, Events and Dialogs do not have a prefix.
+
+Referenced from: <https://nativescript-vue.org>
 
 ### Layouts
 

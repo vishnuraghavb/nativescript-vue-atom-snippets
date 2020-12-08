@@ -1,7 +1,7 @@
 {
-  "name": "nativescript--vue-atom-snippets",
-  "version": "0.0.1",
-  "description": "NativeScript-Vue Snippets",
+  "name": "nativescript-vue-atom-snippets",
+  "version": "0.0.0",
+  "description": "Snippets for Telerik's NativeScript with Vue",
   "keywords": [
     "Vue",
     "JavaScript",
