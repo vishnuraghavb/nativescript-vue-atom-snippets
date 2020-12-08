@@ -1,0 +1,594 @@
+# Author: Vishnu Raghav B
+# apps@vishnuraghav.com
+
+# NativeScript-Vue snippets
+
+
+'.text.html.vue':
+  # Layouts
+  '{N}-vue AbsoluteLayout':
+    'prefix': 'nsabsolute'
+    'body': """
+              <AbsoluteLayout>
+                $1
+              </AbsoluteLayout>
+            """
+  '{N}-vue DockLayout':
+    'prefix': 'nsdock'
+    'body': """
+              <DockLayout stretchLastChild="true">
+                $1
+              </DockLayout>
+            """
+  '{N}-vue FlexboxLayout':
+    'prefix': 'nsflex'
+    'body': """
+              <FlexboxLayout flexDirection="row" flexWrap="nowrap" justifyContent="flex-start" alignItems="stretch" alignContent="stretch">
+                $1
+              </FlexboxLayout>
+            """
+  '{N}-vue GridLayout':
+    'prefix': 'nsgrid'
+    'body': """
+              <GridLayout columns="$1" rows="$2">
+                $3
+              </GridLayout>
+            """
+  '{N}-vue StackLayout':
+    'prefix': 'nsstack'
+    'body': """
+              <StackLayout orientation="vertical">
+                $1
+              </StackLayout>
+            """
+  '{N}-vue WrapLayout':
+    'prefix': 'nswrap'
+    'body': """
+              <WrapLayout orientation="horizontal" itemWidth="$1" itemHeight="$2">
+                $2
+              </WrapLayout>
+            """
+  # Action-Bar
+  '{N}-vue ActionBar':
+    'prefix': 'nsactionbar'
+    'body': """
+              <ActionBar title="$1" android.icon="" flat="false" >
+               <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="$2" />
+               <ActionItem icon="" text="Left" ios.position="left" @tap="" />
+               <ActionItem icon="" text="Right" ios.position="right" @tap="" />
+              </ActionBar>
+            """
+  # Components
+  '{N}-vue ActivityIndicator':
+    'prefix': 'nsloading'
+    'body': """
+              <ActivityIndicator busy="true" @busyChange="onBusyChanged" />
+            """
+  '{N}-vue Button':
+    'prefix': 'nsbutton'
+    'body': """
+              <Button text="$1" @tap="onButtonTap" />
+            """
+  '{N}-vue DatePicker':
+    'prefix': 'nsdate'
+    'body': """
+              <DatePicker date="$1" />
+            """
+  '{N}-vue Frame':
+    'prefix': 'nsframe'
+    'body': """
+              <Frame>
+                <Page>
+                  <ActionBar title="Default Page Title" />
+                  <GridLayout>
+                    <Label text="Default Page Content" />
+                  </GridLayout>
+                </Page>
+              </Frame>
+            """
+  '{N}-vue HtmlView':
+    'prefix': 'nshtml'
+    'body': """
+              <HtmlView html="<div><h1>HtmlView</h1></div>" />
+            """
+  '{N}-vue Image':
+    'prefix': 'nsimg'
+    'body': """
+              <Image src="$1" stretch="none" />
+            """
+  '{N}-vue Label':
+    'prefix': 'nslabel'
+    'body': """
+              <Label text="$1" textWrap="false"/>
+            """
+  '{N}-vue ListPicker':
+    'prefix': 'nslistpicker'
+    'body': """
+              <ListPicker :items="listOfItems" selectedIndex="0" @selectedIndexChange="selectedIndexChanged" />
+            """
+  '{N}-vue ListView':
+    'prefix': 'nslistview'
+    'body': """
+              <ListView for="item in listOfItems" @itemTap="onItemTap">
+                <v-template>
+                  <Label :text="item.text" />
+                </v-template>
+              </ListView>
+            """
+  '{N}-vue Page':
+    'prefix': 'nspage'
+    'body': """
+              <Page actionBarHidden="false">
+                <ActionBar title="My App" />
+                <GridLayout>
+                  <Label text="My Content"/>
+                </GridLayout>
+              </Page>
+            """
+  '{N}-vue Placeholder':
+    'prefix': 'nsplaceholder'
+    'body': """
+              <Placeholder @creatingView="creatingView" />
+            """
+  '{N}-vue Progress':
+    'prefix': 'nsprogress'
+    'body': """
+              <Progress :value="currentProgress" />
+            """
+  '{N}-vue ScrollView':
+    'prefix': 'nsscrollview'
+    'body': """
+              <ScrollView orientation="horizontal" scrollBarIndicatorVisible="true">
+                $1
+              </ScrollView>
+            """
+  '{N}-vue SearchBar':
+    'prefix': 'nssearchbar'
+    'body': """
+              <SearchBar hint="$1" :text="searchPhrase" @textChange="onTextChanged" @submit="onSubmit" />
+            """
+  '{N}-vue SegmentedBar':
+    'prefix': 'nssegmentedbar'
+    'body': """
+              <SegmentedBar :items="listOfItems" selectedIndex="0" @selectedIndexChange="onSelectedIndexChange" />
+            """
+  '{N}-vue Slider':
+    'prefix': 'nsslider'
+    'body': """
+              <Slider value="$1" @valueChange="onValueChanged" />
+            """
+  '{N}-vue Switch':
+    'prefix': 'nsswitch'
+    'body': """
+              <Switch checked="true" />
+            """
+  '{N}-vue TabView':
+    'prefix': 'nstabview'
+    'body': """
+              <TabView :selectedIndex="selectedIndex" @selectedIndexChange="indexChange">
+                <TabViewItem title="Tab 1">
+                  <Label text="Content for Tab 1" />
+                </TabViewItem>
+                <TabViewItem title="Tab 2">
+                  <Label text="Content for Tab 2" />
+                </TabViewItem>
+              </TabView>
+            """
+  '{N}-vue Tabs':
+    'prefix': 'nstabs'
+    'body': """
+              <Tabs>
+                <TabStrip>
+                    <TabStripItem>
+                        <Label text="Tab 1"></Label>
+                        <Image src=""></Image>
+                    </TabStripItem>
+                    <TabStripItem>
+                        <Label text="Tab 2"></Label>
+                        <Image src=""></Image>
+                    </TabStripItem>
+                </TabStrip>
+
+                <TabContentItem>
+                    <GridLayout>
+                        <Label text="Content for Tab 1"></Label>
+                    </GridLayout>
+                </TabContentItem>
+
+                <TabContentItem>
+                    <GridLayout>
+                        <Label text="Content for Tab 2"></Label>
+                    </GridLayout>
+                </TabContentItem>
+            </Tabs>
+            """
+  '{N}-vue BottomNavigation':
+    'prefix': 'nsbottomnavigation'
+    'body': """
+              <BottomNavigation>
+                <TabStrip>
+                    <TabStripItem>
+                        <Label text="Tab 1"></Label>
+                        <Image src=""></Image>
+                    </TabStripItem>
+                    <TabStripItem>
+                        <Label text="Tab 2"></Label>
+                        <Image src=""></Image>
+                    </TabStripItem>
+                </TabStrip>
+
+                <TabContentItem>
+                    <GridLayout>
+                        <Label text="Content for Tab 1"></Label>
+                    </GridLayout>
+                </TabContentItem>
+
+                <TabContentItem>
+                    <GridLayout>
+                        <Label text="Content for Tab 2"></Label>
+                    </GridLayout>
+                </TabContentItem>
+            </BottomNavigation>
+            """
+  '{N}-vue TextField':
+    'prefix': 'nstextfield'
+    'body': """
+              <TextField text="$1" editable="true" returnKeyType="next" />
+            """
+  '{N}-vue TextView':
+    'prefix': 'nstextview'
+    'body': """
+              <TextView text="$1" editable="true" />
+            """
+  '{N}-vue TimePicker':
+    'prefix': 'nstime'
+    'body': """
+              <TimePicker :hour="selectedHour" :minute="selectedMinute" />
+            """
+  '{N}-vue WebView':
+    'prefix': 'nswebview'
+    'body': """
+              <WebView src="$1" />
+            """
+  '{N}-vue FormattedString':
+    'prefix': 'nsformattedstring'
+    'body': """
+              <FormattedString>
+                <Span text="This text has a " />
+                <Span text="red " style="color: red" />
+                <Span text="piece of text. " />
+                <Span text="Also, this bit is italic, " fontStyle="italic" />
+                <Span text="and this bit is bold." fontWeight="bold" />
+              </FormattedString>
+            """
+  # Attributes
+  '{N} Width Attribute':
+    'prefix': 'width'
+    'body': 'width="$1"$2'
+  '{N} Height Attribute':
+    'prefix': 'height'
+    'body': 'height="$1"$2'
+  '{N} Text Attribute':
+    'prefix': 'text'
+    'body': 'text="$1"$2'
+  '{N} Icon Attribute':
+    'prefix': 'icon'
+    'body': 'icon="res://$1"$2'
+  '{N} Text Wrap Attribute':
+    'prefix': 'wrap'
+    'body': 'textWrap="true"$2'
+  '{N} Horizontal Alignment Attribute':
+    'prefix': 'halign'
+    'body': 'horizontalAlignment="center$1"$2'
+  '{N} Vertical Alignment Attribute':
+    'prefix': 'valign'
+    'body': 'verticalAlignment="center$1"$2'
+  '{N} Visibility Attribute':
+    'prefix': 'visibility'
+    'body': 'visibility="collapsed$1"$2'
+  '{N} Stretch Attribute':
+    'prefix': 'stretch'
+    'body': 'stretch="fill$1"$2'
+  '{N} Keyboard Type Attribute':
+    'prefix': 'kbtype'
+    'body': 'keyboardType="email$1"$2'
+  '{N} Row Attribute':
+    'prefix': 'row'
+    'body': 'row="$1"$2'
+  '{N} Column Attribute':
+    'prefix': 'col'
+    'body': 'col="$1"$2'
+  '{N} Rows Attribute':
+    'prefix': 'rows'
+    'body': 'rows="$1"$2'
+  '{N} Columns Attribute':
+    'prefix': 'columns'
+    'body': 'columns="$1"$2'
+  '{N} Rowspan Attribute':
+    'prefix': 'rowspan'
+    'body': 'rowspan="$1"$2'
+  '{N} Colspan Attribute':
+    'prefix': 'colspan'
+    'body': 'colspan="$1" $2'
+  '{N} stretchLastChild Attribute':
+    'prefix': 'stretchLastChild'
+    'body': 'stretchLastChild="true$1"$2'
+  '{N} flexDirection Attribute':
+    'prefix': 'flexDirection'
+    'body': 'flexDirection="column$1"$2'
+  '{N} flexWrap Attribute':
+    'prefix': 'flexWrap'
+    'body': 'flexWrap="wrap$1"$2'
+  '{N} justifyContent Attribute':
+    'prefix': 'justifyContent'
+    'body': 'justifyContent="center$1"$2'
+  '{N} alignItems Attribute':
+    'prefix': 'alignItems'
+    'body': 'alignItems="center$1"$2'
+  '{N} alignContent Attribute':
+    'prefix': 'alignContent'
+    'body': 'alignContent="center$1"$2'
+  '{N} order Attribute':
+    'prefix': 'order'
+    'body': 'order="$1"$2'
+  '{N} flexGrow Attribute':
+    'prefix': 'flexGrow'
+    'body': 'flexGrow="$1"$2'
+  '{N} flexShrink Attribute':
+    'prefix': 'flexShrink'
+    'body': 'flexShrink="$1"$2'
+  '{N} alignSelf Attribute':
+    'prefix': 'alignSelf'
+    'body': 'alignSelf="center$1"$2'
+  '{N} flexWrapBefore Attribute':
+    'prefix': 'flexWrapBefore'
+    'body': 'flexWrapBefore="center$1"$2'
+  '{N} dock Attribute':
+    'prefix': 'dock'
+    'body': 'dock="top$1"$2'
+  '{N} orientation Attribute':
+    'prefix': 'orientation'
+    'body': 'orientation="horizontal$1"$2'
+  '{N} itemWidth Attribute':
+    'prefix': 'itemWidth'
+    'body': 'itemWidth="$1"$2'
+  '{N} itemHeight Attribute':
+    'prefix': 'itemHeight'
+    'body': 'itemHeight="$1"$2'
+  '{N} flat Attribute':
+    'prefix': 'flat'
+    'body': 'flat="true$1"$2'
+  '{N} busy Attribute':
+    'prefix': 'busy'
+    'body': 'busy="true$1"$2'
+  '{N} isEnabled Attribute':
+    'prefix': 'isEnabled'
+    'body': 'isEnabled="false$1"$2'
+  '{N} minDate Attribute':
+    'prefix': 'minDate'
+    'body': 'minDate="$1"$2'
+  '{N} maxDate Attribute':
+    'prefix': 'maxDate'
+    'body': 'maxDate="$1"$2'
+  '{N} src Attribute':
+    'prefix': 'src'
+    'body': 'src="$1"$2'
+  '{N} imageSource Attribute':
+    'prefix': 'imageSource'
+    'body': 'imageSource="$1"$2'
+  '{N} tintColor Attribute':
+    'prefix': 'tintColor'
+    'body': 'tintColor="$1"$2'
+  '{N} loadMode Attribute':
+    'prefix': 'loadMode'
+    'body': 'loadMode="sync$1"$2'
+  '{N} items Attribute':
+    'prefix': 'items'
+    'body': ':items="listOfItems$1"$2'
+  '{N} selectedIndex Attribute':
+    'prefix': 'selectedIndex'
+    'body': 'selectedIndex="0$1"$2'
+  '{N} for Attribute':
+    'prefix': 'for'
+    'body': 'for="item in listOfItems$1"$2'
+  '{N} separatorColor Attribute':
+    'prefix': 'separatorColor'
+    'body': 'separatorColor="transparent$1"$2'
+  '{N} actionBarHidden Attribute':
+    'prefix': 'actionBarHidden'
+    'body': 'actionBarHidden="true$1"$2'
+  '{N} backgroundSpanUnderStatusBar Attribute':
+    'prefix': 'backgroundSpanUnderStatusBar'
+    'body': 'backgroundSpanUnderStatusBar="true$1"$2'
+  '{N} androidStatusBarBackground Attribute':
+    'prefix': 'androidStatusBarBackground'
+    'body': 'androidStatusBarBackground="$1"$2'
+  '{N} enableSwipeBackNavigation Attribute':
+    'prefix': 'enableSwipeBackNavigation'
+    'body': 'enableSwipeBackNavigation="false$1"$2'
+  '{N} statusBarStyle Attribute':
+    'prefix': 'statusBarStyle'
+    'body': 'statusBarStyle="dark$1"$2'
+  '{N} Value Attribute':
+    'prefix': 'value'
+    'body': 'value="$1"$2'
+  '{N} Scroll Bar Indicator Visible Attribute':
+    'prefix': 'scrollBarIndicatorVisible'
+    'body': 'scrollBarIndicatorVisible="false$1"$2'
+  '{N} textFieldBackgroundColor Attribute':
+    'prefix': 'textFieldBackgroundColor'
+    'body': 'textFieldBackgroundColor="$1"$2'
+  '{N} textFieldHintColor Attribute':
+    'prefix': 'textFieldHintColor'
+    'body': 'textFieldHintColor="$1"$2'
+  '{N} Hint Attribute':
+    'prefix': 'hint'
+    'body': 'hint="$1"$2'
+  '{N} selectedBackgroundColor Attribute':
+    'prefix': 'selectedBackgroundColor'
+    'body': 'selectedBackgroundColor="$1"$2'
+  '{N} minValue Attribute':
+    'prefix': 'minValue'
+    'body': 'minValue="0$1"$2'
+  '{N} maxValue Attribute':
+    'prefix': 'maxValue'
+    'body': 'maxValue="100$1"$2'
+  '{N} Checked Attribute':
+    'prefix': 'checked'
+    'body': 'checked="true$1"$2'
+  '{N} Tab Text Color Attribute':
+    'prefix': 'tabTextColor'
+    'body': 'tabTextColor="$1"$2'
+  '{N} Tab Background Color Attribute':
+    'prefix': 'tabBackgroundColor'
+    'body': 'tabBackgroundColor="$1"$2'
+  '{N} Selected Tab Text Color Attribute':
+    'prefix': 'selectedTabTextColor'
+    'body': 'selectedTabTextColor="$1"$2'
+  '{N} Android Tabs Position Attribute':
+    'prefix': 'androidTabsPosition'
+    'body': 'androidTabsPosition="bottom$1"$2'
+  '{N} Secure Attribute':
+    'prefix': 'secure'
+    'body': 'secure="true$1"$2'
+  '{N} Editable Attribute':
+    'prefix': 'editable'
+    'body': 'editable="false$1"$2'
+  '{N} maxLength Attribute':
+    'prefix': 'maxLength'
+    'body': 'maxLength="$1"$2'
+  '{N} returnKeyType Attribute':
+    'prefix': 'returnKeyType'
+    'body': 'returnKeyType="next$1"$2'
+  '{N} autocorrect Attribute':
+    'prefix': 'autocorrect'
+    'body': 'autocorrect="true$1"$2'
+  # Events
+  '{N} tap Event':
+    'prefix': 'tap'
+    'body': '@tap="$1"$2'
+  '{N} busyChange Event':
+    'prefix': 'busyChange'
+    'body': '@busyChange="$1"$2'
+  '{N} dateChange Event':
+    'prefix': 'dateChange'
+    'body': '@dateChange="$1"$2'
+  '{N} selectedIndexChange Event':
+    'prefix': 'selectedIndexChange'
+    'body': '@selectedIndexChange="$1"$2'
+  '{N} itemTap Event':
+    'prefix': 'itemTap'
+    'body': '@itemTap="$1"$2'
+  '{N} loaded Event':
+    'prefix': 'loaded'
+    'body': '@loaded="$1"$2'
+  '{N} navigatedFrom Event':
+    'prefix': 'navigatedFrom'
+    'body': '@navigatedFrom="$1"$2'
+  '{N} navigatedTo Event':
+    'prefix': 'navigatedTo'
+    'body': '@navigatedTo="$1"$2'
+  '{N} navigatingFrom Event':
+    'prefix': 'navigatingFrom'
+    'body': '@navigatingFrom="$1"$2'
+  '{N} navigatingTo Event':
+    'prefix': 'navigatingTo'
+    'body': '@navigatingTo="$1"$2'
+  '{N} valueChange Event':
+    'prefix': 'valueChange'
+    'body': '@valueChange="$1"$2'
+  '{N} scroll Event':
+    'prefix': 'scroll'
+    'body': '@scroll="$1"$2'
+  '{N} textChange Event':
+    'prefix': 'textChange'
+    'body': '@textChange="$1"$2'
+  '{N} submit Event':
+    'prefix': 'submit'
+    'body': '@submit="$1"$2'
+  '{N} clear Event':
+    'prefix': 'clear'
+    'body': '@clear="$1"$2'
+  '{N} checkedChange Event':
+    'prefix': 'checkedChange'
+    'body': '@checkedChange="$1"$2'
+  '{N} returnPress Event':
+    'prefix': 'returnPress'
+    'body': '@returnPress="$1"$2'
+  '{N} focus Event':
+    'prefix': 'focus'
+    'body': '@focus="$1"$2'
+  '{N} blur Event':
+    'prefix': 'blur'
+    'body': '@blur="$1"$2'
+  '{N} timeChange Event':
+    'prefix': 'timeChange'
+    'body': '@timeChange="$1"$2'
+  '{N} loadStarted Event':
+    'prefix': 'loadStarted'
+    'body': '@loadStarted="$1"$2'
+  '{N} loadFinished Event':
+    'prefix': 'loadFinished'
+    'body': '@loadFinished="$1"$2'
+
+
+'.text.html.vue .source.embedded.html':
+  # Dialogs
+  '{N}-vue ActionDialog':
+    'prefix': 'actiondialog'
+    'body': """
+            action("Your message", "Cancel button text", ["Option1", "Option2"])
+              .then(result => {
+                console.log(result)
+              })
+            """
+  '{N}-vue AlertDialog':
+    'prefix': 'alertdialog'
+    'body': """
+            alert({
+              title: "Your title",
+              message: "Your message",
+              okButtonText: "Your OK button text"
+            }).then(() => {
+              console.log("Alert dialog closed");
+            })
+            """
+  '{N}-vue ConfirmDialog':
+    'prefix': 'confirmdialog'
+    'body': """
+            confirm({
+              title: "Your title",
+              message: "Your message",
+              okButtonText: "Your OK button text",
+              cancelButtonText: "Your Cancel text"
+            }).then(result => {
+              console.log(result);
+            })
+            """
+  '{N}-vue LoginDialog':
+    'prefix': 'logindialog'
+    'body': """
+            login({
+              title: "Your login title",
+              message: "Your login message",
+              okButtonText: "Your OK button text",
+              cancelButtonText: "Your Cancel button text",
+              userName: "Username field value",
+              password: "Password field value"
+            }).then(result => {
+              console.log(`Dialog result: ${result.result}, user: ${result.userName}, pwd: ${result.password}`);
+            })
+            """
+  '{N}-vue PromptDialog':
+    'prefix': 'promptdialog'
+    'body': """
+            prompt({
+              title: "Your dialog title",
+              message: "Your message",
+              okButtonText: "Your OK button text",
+              cancelButtonText: "Your Cancel button text",
+              defaultText: "Suggested user input",
+            }).then(result => {
+              console.log(`Dialog result: ${result.result}, text: ${result.text}`)
+            })
+            """
