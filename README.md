@@ -60,8 +60,8 @@ Referenced from: <https://nativescript-vue.org>
 -   col - `col`
 -   rows - `rows`
 -   columns - `columns`
--   rowspan - `rowspan`
--   colspan - `colspan`
+-   rowspan - `rowSpan`
+-   colspan - `colSpan`
 -   stretchLastChild - `stretchLastChild`
 -   flexDirection - `flexDirection`
 -   flexWrap - `flexWrap`
